@@ -213,6 +213,7 @@
           id="result-title"
           class="text-lg"
         ></h2>
+        <img id="result-image" />
         <div id="result-text"></div>
       </div>
     </div>
@@ -291,15 +292,11 @@
 
         resultTitle.textContent = `당신의 동물 유형은 ${animals[resultIndex]}입니다!`;
 
-        resultImage.src = `./images/${images[resultIndex]}.jpg`;
+        resultImage.src = `./images/${images[resultIndex]}`;
 
-        resultText.innerHTML +=
-          images[
-            descriptions[animals[resultIndex]].forEach(
-              (item) =>
-                (resultText.innerHTML += `<p class="text-lg">${item}</p>`)
-            )
-          ];
+        descriptions[animals[resultIndex]].forEach(
+          (item) => (resultText.innerHTML += `<p class="text-lg">${item}</p>`)
+        );
 
         document.getElementById("result").classList.add("active");
         document.getElementById("result").style.display = "block";
