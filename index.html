@@ -208,8 +208,12 @@
       </div>
 
       <div id="result" class="question">
-        <h2 class="text-2xl font-bold mb-4">당신의 결과는:</h2>
-        <p id="result-text" class="text-lg"></p>
+        <h2
+          class="text-2xl font-bold mb-4"
+          id="result-title"
+          class="text-lg"
+        ></h2>
+        <div id="result-text"></div>
       </div>
     </div>
 
@@ -217,6 +221,14 @@
       let currentQuestion = 1;
       let animalScores = [0, 0, 0, 0, 0, 0];
       const animals = ["호랑이", "독수리", "코알라", "기린", "펭귄", "강아지"];
+      const images = [
+        "tiger.png",
+        "vurture.png",
+        "koala.png",
+        "girraffe.png",
+        "penguin.png",
+        "puppy.png",
+      ];
 
       const descriptions = {
         호랑이: [
@@ -266,15 +278,22 @@
           nextQuestionElement.classList.add("active");
           nextQuestionElement.style.display = "block";
         } else {
+          console.log("??");
           showResult();
         }
       }
 
       function showResult() {
         const resultIndex = animalScores.indexOf(Math.max(...animalScores));
+        const resultImage = document.getElementById("result-image");
+        const resultTitle = document.getElementById("result-title");
         const resultText = document.getElementById("result-text");
-        resultText.textContent = `당신의 동물 유형은 ${animals[resultIndex]}입니다!`;
-        resultText.textContent.append(`${descriptions[animals[resultIndex]]})`);
+
+        resultTitle.textContent = `당신의 동물 유형은 ${animals[resultIndex]}입니다!`;
+
+        descriptions[animals[resultIndex]].forEach(
+          (item) => (resultText.innerHTML += `<p class="text-lg">${item}</p>`)
+        );
 
         document.getElementById("result").classList.add("active");
         document.getElementById("result").style.display = "block";
