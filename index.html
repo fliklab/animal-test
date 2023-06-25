@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>동물 심리테스트</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      section {
+        display: none;
+      }
+
+      section.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="active" id="question-1">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 1</h2>
+        <p class="mb-2">
+          소중한 보물을 찾기 위해 수많은 방들이 있는 성을 탐험하게 되었습니다.
+          당신이 가장 먼저 방문할 방은?
+        </p>
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="3,2,0,0,0,0" class="mr-2" />
+          도전적이고 흥미로운 퍼즐이 가득한 방
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="0,0,3,2,0,0" class="mr-2" /> 책과
+          고요함이 가득한 독서실
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q1" value="0,0,0,0,3,2" class="mr-2" />
+          사람들이 모여 대화하는 넓은 연회장
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="nextQuestion(1)"
+        >
+          다음
+        </button>
+      </div>
+    </section>
+
+    <section id="question-2">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 2</h2>
+        <p class="mb-2">마법사로서 당신의 애완 동물은 무엇인가요?</p>
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="2,3,0,0,0,0" class="mr-2" />
+          용감하고 강인한 그리핀
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="0,0,3,2,0,0" class="mr-2" />
+          차분하고 상냥한 유니콘
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q2" value="0,0,0,0,3,2" class="mr-2" />
+          사람을 잘 따르는 온순한 용
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="nextQuestion(2)"
+        >
+          다음
+        </button>
+      </div>
+    </section>
+
+    <section id="question-3">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 3</h2>
+        <p class="mb-2">전설 속의 마을을 지키기 위해 선택할 마법은?</p>
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="3,2,0,0,0,0" class="mr-2" />
+          강력하고 공격적인 불의 마법
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="0,0,3,2,0,0" class="mr-2" />
+          생명을 회복시키는 힐링 마법
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q3" value="0,0,0,0,3,2" class="mr-2" /> 다른
+          사람을 보호하는 방패 마법
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="nextQuestion(3)"
+        >
+          다음
+        </button>
+      </div>
+    </section>
+
+    <section id="question-4">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 4</h2>
+        <p class="mb-2">요정 왕국의 왕이 되었습니다. 왕국의 법을 만든다면?</p>
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="2,3,0,0,0,0" class="mr-2" />
+          성실하고 강한 정신력을 지닌 이들에게 특별한 권리를 부여
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="0,0,3,2,0,0" class="mr-2" /> 왕국
+          내 모든 이들이 편안하고 행복하게 살 수 있도록 하기
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q4" value="0,0,0,0,3,2" class="mr-2" /> 모든
+          이들이 의견을 자유롭게 나누고, 공동체를 이루도록 하기
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="nextQuestion(4)"
+        >
+          다음
+        </button>
+      </div>
+    </section>
+
+    <section id="question-5">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 5</h2>
+        <p class="mb-2">마법의 숲에서 당신이 만난 동물은?</p>
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="3,2,0,0,0,0" class="mr-2" />
+          빠르고 날렵한 레이스홀스
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="0,0,3,2,0,0" class="mr-2" />
+          차분하고 상냥한 화이트 토끼
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q5" value="0,0,0,0,3,2" class="mr-2" />
+          장난스럽고 친근한 숲의 요정
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="nextQuestion(5)"
+        >
+          다음
+        </button>
+      </div>
+    </section>
+
+    <section id="question-6">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 6</h2>
+        <p class="mb-2">
+          비밀 요원이 되어 세상을 구하는 꿈을 꾸는 당신, 귀하의 주말 계획은?
+        </p>
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="3,2,0,0,0,0" class="mr-2" />
+          정글을 누비며 모험을 즐긴다.
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="0,0,3,2,0,0" class="mr-2" />
+          전략을 짜며 귀가의 안전한 공간에서 휴식을 취한다.
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q6" value="0,0,0,0,3,2" class="mr-2" />
+          마피아 파티에서 아군을 모으는 시간을 갖는다.
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="nextQuestion(6)"
+        >
+          다음
+        </button>
+      </div>
+    </section>
+
+    <section id="question-7">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 7</h2>
+        <p class="mb-2">주어진 미션, 당신의 접근 방식은?</p>
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="2,3,0,0,0,0" class="mr-2" />
+          혼자서 전략을 세우고 행동한다.
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="0,0,3,2,0,0" class="mr-2" />
+          팀원들과 머리를 맞대고, 작전을 짠다.
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q7" value="0,0,0,0,3,2" class="mr-2" />
+          독특하게 알 수 없는 방식으로 접근한다.
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="nextQuestion(7)"
+        >
+          다음
+        </button>
+      </div>
+    </section>
+
+    <section id="question-8">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 8</h2>
+        <p class="mb-2">위기 상황! 레이저가 몸을 향해 날아오고 있다. 반응은?</p>
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="3,2,0,0,0,0" class="mr-2" /> 즉시
+          반응하여 위기를 모면한다.
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="0,0,3,2,0,0" class="mr-2" />
+          차분하게 생각하고, 레이저를 피하는 최선의 방법을 찾는다.
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q8" value="0,0,0,0,3,2" class="mr-2" /> 다른
+          요원들과 협력하여 위기를 극복한다.
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="nextQuestion(8)"
+        >
+          다음
+        </button>
+      </div>
+    </section>
+
+    <section id="question-9">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 9</h2>
+        <p class="mb-2">의사 결정의 순간, 당신의 선택은?</p>
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="2,3,0,0,0,0" class="mr-2" />
+          직관적으로 결정, 시간은 금이다!
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="0,0,3,2,0,0" class="mr-2" /> 조금
+          더 생각해보고, 최선의 선택을 한다.
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q9" value="0,0,0,0,3,2" class="mr-2" />
+          팀원들의 의견을 듣고, 공동의 선택을 한다.
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="nextQuestion(9)"
+        >
+          다음
+        </button>
+      </div>
+    </section>
+
+    <section id="question-10">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">질문 10</h2>
+        <p class="mb-2">
+          요원으로서 당신이 가장 중요하게 생각하는 것은 무엇인가요?
+        </p>
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="2,3,0,0,0,0" class="mr-2" />
+          무조건 목표를 달성하고, 성공하는 것.
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="0,0,3,0,0,2" class="mr-2" />
+          안전과 편안함, 이 둘은 무엇보다 중요하다.
+        </label>
+        <label class="block mb-2">
+          <input type="radio" name="q10" value="0,0,0,2,3,0" class="mr-2" />
+          팀원들과의 동료애, 함께하는 힘이 가장 중요하다.
+        </label>
+        <button
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded mt-4"
+          onclick="showResult()"
+        >
+          결과 보기
+        </button>
+      </div>
+    </section>
+
+    <section id="result" class="hidden">
+      <div class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-4">당신의 결과는:</h2>
+        <p id="result-text" class="text-lg"></p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+      let currentQuestion = 1;
+      let animalScores = [0, 0, 0, 0, 0, 0];
+      const animals = ["호랑이", "독수리", "코알라", "기린", "펭귄", "강아지"];
+
+      function nextQuestion(questionNumber) {
+        const selectedValue = document.querySelector(
+          `input[name=q${questionNumber}]:checked`
+        ).value;
+        const scores = selectedValue.split(",").map(Number);
+
+        for (let i = 0; i < scores.length; i++) {
+          animalScores[i] += scores[i];
+        }
+
+        document
+          .getElementById(`question-${questionNumber}`)
+          .classList.remove("active");
+        document
+          .getElementById(`question-${questionNumber + 1}`)
+          .classList.add("active");
+        currentQuestion++;
+      }
+
+      function showResult() {
+        const resultIndex = animalScores.indexOf(Math.max(...animalScores));
+        const resultText = document.getElementById("result-text");
+
+        resultText.textContent = `당신의 동물 유형은 ${animals[resultIndex]}입니다!`;
+
+        document.getElementById("question-10").classList.remove("active");
+        document.getElementById("result").classList.add("active");
+      }
+    </script>
+  </body>
+</html>
