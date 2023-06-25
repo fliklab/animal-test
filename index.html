@@ -61,13 +61,13 @@
           소중한 보물을 찾기 위해 수많은 방들이 있는 성을 탐험하게 됐다. 당신이
           가장 먼저 방문할 방은?
         </h2>
-        <div class="choice" onclick="selectChoice(1, '3,2,0,0,0,0')">
+        <div class="choice" onclick="selectChoice(1, '3,3,0,0,0,0')">
           도전적이고 흥미로운 퍼즐이 가득한 방
         </div>
         <div class="choice" onclick="selectChoice(1, '0,0,3,2,0,0')">
           책과 고요함이 가득한 독서실
         </div>
-        <div class="choice" onclick="selectChoice(1, '0,0,0,0,3,2')">
+        <div class="choice" onclick="selectChoice(1, '0,0,0,0,2,2')">
           사람들이 모여 대화하는 넓은 연회장
         </div>
       </div>
@@ -106,7 +106,7 @@
         <h2 class="text-2xl font-bold mb-4">
           요정 왕국의 왕이 되었다. 왕국의 법을 만든다면?
         </h2>
-        <div class="choice" onclick="selectChoice(4, '3,2,0,0,0,0')">
+        <div class="choice" onclick="selectChoice(4, '2,3,0,0,0,0')">
           성실하고 강한 정신력을 지닌 이들에게 특별한 권리를 부여
         </div>
         <div class="choice" onclick="selectChoice(4, '0,0,3,2,0,0')">
@@ -166,13 +166,13 @@
         <h2 class="text-2xl font-bold mb-4">
           위기 상황! 레이저가 몸을 향해 날아오고 있다. 반응은?
         </h2>
-        <div class="choice" onclick="selectChoice(8, '3,2,0,0,0,0')">
+        <div class="choice" onclick="selectChoice(8, '2,3,0,0,0,0')">
           즉시 반응하여 위기를 모면한다
         </div>
-        <div class="choice" onclick="selectChoice(8, '0,0,3,2,0,0')">
+        <div class="choice" onclick="selectChoice(8, '0,0,2,3,0,0')">
           차분하게 생각하고, 레이저를 피하는 최선의 방법을 찾는다
         </div>
-        <div class="choice" onclick="selectChoice(8, '0,0,0,0,3,2')">
+        <div class="choice" onclick="selectChoice(8, '0,0,0,0,2,3')">
           다른 요원들과 협력하여 위기를 극복한다
         </div>
       </div>
@@ -184,10 +184,10 @@
         <div class="choice" onclick="selectChoice(9, '3,2,0,0,0,0')">
           직관적으로 결정, 시간은 금이다!
         </div>
-        <div class="choice" onclick="selectChoice(9, '0,0,3,2,0,0')">
+        <div class="choice" onclick="selectChoice(9, '0,0,2,2,0,0')">
           조금 더 생각해보고, 최선의 선택을 한다
         </div>
-        <div class="choice" onclick="selectChoice(9, '0,0,0,0,3,2')">
+        <div class="choice" onclick="selectChoice(9, '0,0,0,0,3,3')">
           팀원들의 의견을 듣고, 공동의 선택을 한다
         </div>
       </div>
@@ -290,6 +290,8 @@
         const resultText = document.getElementById("result-text");
 
         resultTitle.textContent = `당신의 동물 유형은 ${animals[resultIndex]}입니다!`;
+
+        resultImage.src = `./images/${images[resultIndex]}`;
 
         descriptions[animals[resultIndex]].forEach(
           (item) => (resultText.innerHTML += `<p class="text-lg">${item}</p>`)
