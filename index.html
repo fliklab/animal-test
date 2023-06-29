@@ -215,9 +215,26 @@
         ></h2>
         <img id="result-image" />
         <div id="result-text"></div>
+        <div class="discus">...</div>
       </div>
     </div>
-
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="fliklab/animal-test"
+      data-repo-id="R_kgDOJzz9AA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOJzz9AM4CXjCV"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
     <script>
       let currentQuestion = 1;
       let animalScores = [0, 0, 0, 0, 0, 0];
@@ -279,8 +296,7 @@
           nextQuestionElement.classList.add("active");
           nextQuestionElement.style.display = "block";
         } else {
-          console.log("??");
-          showResult();
+          console.log("");
         }
       }
 
