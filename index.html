@@ -16,6 +16,7 @@
       }
 
       .question {
+        max-width: 800px;
         display: none;
       }
 
@@ -206,74 +207,12 @@
           안전과 편안함, 이 둘은 무엇보다 중요하다
         </div>
       </div>
-
-      <div id="result" class="question">
-        <h2
-          class="text-2xl font-bold mb-4"
-          id="result-title"
-          class="text-lg"
-        ></h2>
-        <img id="result-image" />
-        <div id="result-text"></div>
-        <div class="discus">...</div>
-      </div>
     </div>
-    <script
-      src="https://giscus.app/client.js"
-      data-repo="fliklab/animal-test"
-      data-repo-id="R_kgDOJzz9AA"
-      data-category="Announcements"
-      data-category-id="DIC_kwDOJzz9AM4CXjCV"
-      data-mapping="pathname"
-      data-strict="0"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="bottom"
-      data-theme="preferred_color_scheme"
-      data-lang="ko"
-      data-loading="lazy"
-      crossorigin="anonymous"
-      async
-    ></script>
+
     <script>
       let currentQuestion = 1;
       let animalScores = [0, 0, 0, 0, 0, 0];
       const animals = ["호랑이", "독수리", "코알라", "기린", "펭귄", "강아지"];
-      const images = [
-        "tiger.png",
-        "vurture.png",
-        "koala.png",
-        "girraffe.png",
-        "penguin.png",
-        "puppy.png",
-      ];
-
-      const descriptions = {
-        호랑이: [
-          "축하합니다! 당신의 동물 유형은 호랑이입니다. 호랑이는 용맹하고 강인한 성격으로 야생에서 생존력이 뛰어난 동물입니다. 그러나 호랑이에 대한 이야기는 여기서 끝나지 않습니다. 당신은 호랑이의 용감한 모습과 함께 특별한 비밀을 간직하고 있습니다.",
-          "호랑이는 야행성이라고 알려져 있습니다. 밤에 활동을 시작하여 야간에 뛰어난 시력과 능력을 발휘합니다. 당신 또한 호랑이와 같이 어둠 속에서 빛나는 순간을 가지고 있습니다. 어려운 상황에서 당신의 능력과 잠재력이 최고조에 달하는 것을 발견할 것입니다. 당신은 비록 숨어있는 힘을 보여주지 않을지도 모르지만, 어둠 속에서 빛을 내며 주위 사람들을 놀라게 할 것입니다.",
-        ],
-        독수리: [
-          "축하합니다! 당신의 동물 유형은 독수리입니다. 독수리는 뛰어난 시야와 날개를 펼칠 때의 우아함으로 유명한 동물입니다. 그러나 독수리에 대한 이야기는 여기서 끝나지 않습니다. 당신은 독수리의 위엄있는 모습과 함께 감춰진 비밀을 품고 있습니다.",
-          "독수리는 높은 곳에서 눈부신 시야를 갖고 있습니다. 당신도 독수리와 같이 높은 곳에서 조망하며 넓은 시야를 갖고 있습니다. 당신은 상황을 면밀히 살피고, 다양한 시각과 통찰력으로 문제를 해결할 수 있습니다. 높은 곳에서 마음껏 날아다니며 세상을 바라보는 독수리와 같이 당신은 비전과 목표를 향해 자신을 이끌어나가는 능력을 가지고 있습니다.",
-        ],
-        코알라: [
-          "축하합니다! 당신의 동물 유형은 코알라입니다. 코알라는 사랑스럽고 귀여운 외모로 유명한 동물이죠. 그러나 코알라에 대한 이야기는 여기서 끝나지 않습니다. 당신은 코알라의 사랑스러운 외모 뒤에 놀라운 숨겨진 특성을 가지고 있습니다.",
-          "코알라는 특히나 나무 위에서 주로 생활하며, 자신만의 편안한 안식처를 만듭니다. 당신 또한 코알라와 같이 조용하고 평화로운 환경에서 안정과 안락을 찾는 경향이 있습니다. 당신은 자연과 어울려 조용한 순간을 즐기고, 마음을 편안하게 만드는 작은 즐거움을 발견합니다. 또한 코알라의 사랑스러운 외모와 같이 당신은 주변 사람들에게 친근하며 즐겁고 온화한 성격으로 사랑을 받는 존재입니다.",
-        ],
-        기린: [
-          "축하합니다! 당신의 동물 유형은 기린입니다. 기린은 뛰어난 신장과 우아한 모습으로 알려져 있습니다. 그러나 기린에 대한 이야기는 여기서 끝나지 않습니다. 당신은 기린의 높은 모습 뒤에 놀라운 숨겨진 특성을 가지고 있습니다.",
-          "기린은 그들만의 독특한 특성으로 높은 나무의 잎사귀를 먹는 것으로 유명합니다. 당신도 기린과 같이 독특하고 독창적인 특성을 가지고 있습니다. 당신은 창의적인 사고와 비판적인 시각을 통해 문제를 해결하며, 주어진 상황에서 독특한 방식으로 성공을 이끌어냅니다. 기린처럼 높은 나무 꼭대기에서 다양한 시각을 확보하며 새로운 아이디어를 발굴합니다.",
-        ],
-        펭귄: [
-          "축하합니다! 당신의 동물 유형은 펭귄입니다. 펭귄은 매력적이고 사회성이 뛰어난 동물로 알려져 있습니다. 그러나 펭귄에 대한 이야기는 여기서 끝나지 않습니다. 당신은 펭귄의 매력적인 외모 뒤에 더욱 특별한 성격을 숨기고 있습니다.",
-          "펭귄은 사회적인 동물로 알려져 있습니다. 그러므로 당신 또한 펭귄과 같이 사회적인 상황에서 빛나는 순간을 가지고 있습니다. 당신은 쾌활하고 활기차며 다른 사람들과의 관계에서 매력적인 존재입니다. 주변 사람들은 당신의 유머 감각과 사회적인 능력에 매료되며, 당신과 함께하는 시간을 즐깁니다.",
-        ],
-        강아지: [
-          "축하합니다! 당신의 동물 유형은 강아지입니다. 강아지는 충성심과 사랑스러운 성격으로 사람들에게 인기 있는 동물입니다. 그러나 강아지에 대한 이야기는 여기서 끝나지 않습니다. 당신은 강아지의 사랑스러운 외모 뒤에 더욱 놀라운 성격을 숨기고 있습니다.",
-          "강아지는 충실한 동물로 알려져 있습니다. 당신도 강아지와 같이 충실하며 다른 사람들에게 신뢰를 줄 수 있는 사람입니다. 당신은 친절하고 다정한 성품을 가지고 있으며, 주변 사람들을 쉽게 사로잡는 매력을 가지고 있습니다. 당신은 주위 사람들에게 큰 영향을 미치며, 그들이 당신을 믿고 의지할 수 있도록 최선을 다합니다.",
-        ],
-      };
 
       function selectChoice(questionNumber, scores) {
         const scoresArr = scores.split(",").map(Number);
@@ -296,26 +235,15 @@
           nextQuestionElement.classList.add("active");
           nextQuestionElement.style.display = "block";
         } else {
-          console.log("");
+          showResult();
         }
       }
 
       function showResult() {
         const resultIndex = animalScores.indexOf(Math.max(...animalScores));
-        const resultImage = document.getElementById("result-image");
-        const resultTitle = document.getElementById("result-title");
-        const resultText = document.getElementById("result-text");
 
-        resultTitle.textContent = `당신의 동물 유형은 ${animals[resultIndex]}입니다!`;
-
-        resultImage.src = `./images/${images[resultIndex]}`;
-
-        descriptions[animals[resultIndex]].forEach(
-          (item) => (resultText.innerHTML += `<p class="text-lg">${item}</p>`)
-        );
-
-        document.getElementById("result").classList.add("active");
-        document.getElementById("result").style.display = "block";
+        // Redirect to result.html
+        window.location.href = `result.html?animal=${animals[resultIndex]}`;
       }
     </script>
   </body>
